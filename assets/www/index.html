@@ -1,0 +1,153 @@
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.3/jquery.mobile-1.4.3.min.css" />
+		<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+		<script src="http://code.jquery.com/mobile/1.4.3/jquery.mobile-1.4.3.min.js"></script>
+		<link rel="stylesheet" href="css/jquery.mobile-1.4.0.css">
+  		<link rel="stylesheet" href="css/app.css">
+  		<script src="js/jquery.js"></script>
+  		<script src="js/jquery.mobile-1.4.0.js"></script>
+		<script>
+			function length_convert()
+			{
+				var inch = document.getElementById("inch");
+				var cm = document.getElementById("cm");
+				var feet = document.getElementById("feet");
+				if(inch.value != "")
+				{
+					cm.value = inch.value * 2.54;
+					feet.value = inch.value * 0.0833;
+				}
+				else if(cm.value != "")
+				{
+					inch.value = cm.value * 0.0328;
+					feet.value = cm.value * 0.3937;
+				}
+				else if(feet.value != "")
+				{
+					inch.value = feet.value * 12;
+					cm.value = feet.value * 30.48;
+				}
+			}
+
+			function mass_convert()
+			{
+				var kg = document.getElementById("kg");
+				var ounce = document.getElementById("onuce");
+				var pound = document.getElementById("pound");
+				if(kg.value != "")
+				{
+					//pound.value = kg.value * ;
+					//ounce.value = kg.value * ;
+					//.value = kg.value * ;
+				}
+				else if(cel.value != "")
+				{
+					//far.value = cel.value * ;
+				}
+			}
+
+			function temp_convert()
+			{
+				var cel = document.getElementById("celcius");
+				var far = document.getElementById("faren");
+				var kel = document.getElementById("kelvin");
+				if(far.value != "")
+				{
+					cel.value = (far.value - 32) * 5/9;
+					kel.value = (far.value - 32) * 5/9 + 273.15;
+				}
+				else if(cel.value != "")
+				{
+					far.value = (cel.value*9/5) + 32;
+					kel.value = cel.value + 273;
+				}
+				else if(kel.value != "")
+				{
+					cel.value = kel.value - 273.15;
+					far.value = (kel.value - 273.15) * 9/5 + 32;
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<div data-role="page" id="length_converter">
+
+			<div data-role="panel" data-swipe-close="true" id="measure" data-display="overlay">
+				<h3>Measure:</h3>
+				<ul data-role="listview">
+      				<li><a href="#length_converter">Length</a></li>
+      				<li><a href="#temp_converter">Temperature</a></li>
+      				<li><a href="#mass_converter">Mass</a></li>
+    			</ul>
+			</div>
+
+			<div data-role="header">
+				<h3>Length Converter</h3>
+				<a href="#measure" class="ui-btn ui-btn-inline ui-corner-all ui-shadow" >Measure</a>
+			</div>
+
+			<div data-role="main">
+				<form>
+					Inches: <input type="number" id="inch" />
+					Centimeter:<input type="number" id="cm" />
+					Feet: <input type="number" id="feet" />
+					<input type="button" value="Convert" onClick="length_convert();" />
+					<button type="reset">Reset</button>
+				</form>
+			</div>
+			
+			<div data-role="footer">
+				<!--<div data-role="navbar">
+					 <ul>
+      					<li><a href="#length_converter">Length</a></li>
+      					<li><a href="#temp_converter"></a></li>
+      					<li><a href="#mass_converter">Search</a></li>
+    				</ul>
+				</div>-->
+			</div>
+
+			
+
+		</div>
+		
+		<!-- Temperature Converter -->
+		<div data-role="page" id="temp_converter">
+			
+			<div data-role="panel" data-swipe-close="true" id="measure" data-display="overlay">
+				<h3>Measure:</h3>
+				<ul data-role="listview">
+      				<li><a href="#length_converter">Length</a></li>
+      				<li><a href="#temp_converter">Temperature</a></li>
+      				<li><a href="#mass_converter">Mass</a></li>
+    			</ul>
+			</div>
+
+			<div data-role="header">
+				<h2>Temperature Converter</h2>
+				<a href="#measure" class="ui-btn ui-btn-inline ui-corner-all ui-shadow" >Measure</a>
+			</div>
+			<div data-role="main">
+				<form>
+					Celcius: <input type="number" id="celcius" />
+					Farenheit: <input type="number" id="faren" />
+					Kelvin: <input type="number" id="kelvin" />
+					<input type="button" value="Convert" onClick="temp_convert();" />
+					<button type="reset">Reset</button>
+				</form>
+			</div>
+			<div data-role="footer">
+			</div>
+		</div>
+		<div data-role="page" id="converter">
+			<div data-role="header">
+			</div>
+			<div data-role="main">
+			</div>
+			<div data-role="footer">
+			</div>
+		</div>
+	</body>
+
+</html>

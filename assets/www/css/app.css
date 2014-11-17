@@ -1,0 +1,48 @@
+.amounts {
+    text-align: center;
+}
+.amounts label {
+    display: inline-block;
+    min-width: 150px;
+}
+
+.totals {
+    color: #080;
+}
+
+#header{
+	text-align: center;
+	font-family: Garamond;
+	color: green;
+}
+
+form label{
+	font-family: calibri;
+	color: red;
+}
+
+#input{
+	border: 1px solid black;
+	height: 50px;
+	font-size: 25px;
+}
+
+table{
+	text-align: center;
+	display: table;
+	width: 100%;
+}
+
+table tr{
+	line-height: 150px;
+	font-size: 40px;
+}
+
+#sum{
+	height: 50px;
+	font-size: 25px;
+	color: green;
+}
+
+
+
